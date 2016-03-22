@@ -19,10 +19,10 @@ export class AppComponent {
   public tasks: Task[]; //Task[] (or Array<Task>) identifies tasks as an array of task objects
   constructor(){
     this.tasks = [
-      new Task("Create To-Do List app.", 0),
-      new Task("Learn Judo.", 1),
-      new Task("Rewatch all the Tremors movies.", 2),
-      new Task("Do homework.", 3)
+      new Task("Create To-Do List app.", "| High Priority", 0),
+      new Task("Learn Judo.", "| Low Priority", 1),
+      new Task("Rewatch all the Tremors movies.", "| High Priority", 2),
+      new Task("Do homework.", "| Medium Priority", 3)
     ];
   }
   taskWasSelected(clickedTask: Task): void {

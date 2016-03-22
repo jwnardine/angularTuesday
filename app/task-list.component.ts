@@ -11,7 +11,9 @@ import {DonePipe} from './done.pipe';
   outputs: ['onTaskSelect'],
   pipes: [DonePipe],
   directives: [TaskComponent, EditTaskDetailsComponent, NewTaskComponent],
-  template: `
+  template:
+  `
+
     <select (change)="onChange($event.target.value)" class="filter">
       <option value="all">Show All</option>
       <option value="done">Show Done</option>
@@ -40,9 +42,9 @@ export class TaskListComponent {
     this.selectedTask = clickedTask;
     this.onTaskSelect.emit(clickedTask);
   }
-  createTask(description: string): void {
+  createTask(newTaskInfo): void {
     this.taskList.push(
-      new Task(description, this.taskList.length)
+      new Task(newTaskInfo[0], newTaskInfo[1], this.taskList.length)
     );
   }
   onChange(filterOption) {
