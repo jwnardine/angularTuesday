@@ -15,3 +15,22 @@
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
 
   </head>
+
+  <!-- 3. Display the application -->
+  <body>
+    <my-app>Loading...</my-app>
+  </body>
+  <!-- 2. Configure SystemJS -->
+  <script>
+    System.config({
+      packages: {
+        app: {
+          format: 'register',
+          defaultExtension: 'js'
+        }
+      }
+    });
+    System.import('app/main')
+          .then(null, console.error.bind(console));
+  </script>
+</html>
